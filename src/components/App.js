@@ -1,13 +1,20 @@
 import React from "react";
-import blogData from "../data/blog";
-
-console.log(blogData);
+import Header from "./Header";
+import About from "./About";
 
 function App() {
+  const blogName = 'blogdata'; 
+  const logoImage = 'https://via.placeholder.com/215'; 
+  const aboutText = 'To make a static site in React to practice building components, writing JSX, and passing down data as props.'; 
+  const posts = [
+    { id: 1, title: 'Post 1', date: 'January 1, 1970', preview: 'Preview of post 1...' },
+  ];
+
   return (
     <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+      <Header blogName={blogName} />
+      <About logoImage={logoImage} aboutText={aboutText} />
+      <ArticleList posts={posts} />
     </div>
   );
 }
